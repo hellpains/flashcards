@@ -1,10 +1,11 @@
-import { Button } from '@/components/ui/button/button'
+import { Typography } from '@/components/ui/typography'
 
 export function App() {
   return (
-    <div>
-      <Button variant={'secondary'}>sdf</Button>
-      <Button as={'a'}>wsef</Button>
+    <div style={{ background: 'white', height: '400px', width: '400px' }}>
+      <Typography variant={'h2'}>
+        Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH
+      </Typography>
     </div>
   )
 }
