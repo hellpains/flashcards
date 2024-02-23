@@ -10,18 +10,28 @@ export type InputProps = {
   disabled?: boolean
   error?: string
   label?: string
-  onValueChange?: any
+  onValueChange?: (value: string) => void
   password?: boolean
   search?: boolean
 } & ComponentPropsWithoutRef<'input'>
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
-  const { className, disabled, error, label, onValueChange, password, search, value, ...rest } =
-    props
+  const {
+    className,
+    disabled,
+    error,
+    label,
+    onChange,
+    onValueChange,
+    password,
+    search,
+    value,
+    ...rest
+  } = props
   const [passwordVisible, setPasswordVisible] = useState(false)
 
   const onHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onValueChange && onValueChange(e.target.value)
+    onValueChange?.(e.target.value)
   }
 
   return (
@@ -47,7 +57,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps
           value={value}
         />
         {search && value && (
-          <Button className={s.closeButton} onClick={() => onValueChange('')} variant={'icon'}>
+          <Button className={s.closeButton} onClick={() => onValueChange?.('')} variant={'icon'}>
             <Close />
           </Button>
         )}
