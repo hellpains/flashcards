@@ -1,0 +1,108 @@
+.container {
+  color: var(--color-light-100);
+
+  .inputWrapper {
+    position: relative;
+
+    .input {
+      all: unset;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding: 6px 12px;
+
+      border: 1px solid var(--color-dark-300);
+      border-radius: 2px;
+      outline: 1px solid transparent;
+
+      &.error {
+        color: var(--color-danger-300);
+        border-color: var(--color-danger-300);
+
+        &::placeholder {
+          color: inherit;
+        }
+      }
+
+      &.password {
+        padding-right: 44px;
+      }
+
+      &.search {
+        padding-left: 42px;
+      }
+
+      &.close {
+        padding-right: 34px;
+      }
+
+      &:hover {
+        background-color: var(--color-dark-700);
+        border-color: var(--color-dark-100);
+        transition: 0.3s;
+      }
+
+      &:focus-visible {
+        box-sizing: border-box;
+        border-color: var(--color-info-700);
+        outline: 1px solid var(--color-info-700);
+        transition: 0.3s;
+      }
+    }
+
+    .eye {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+
+      fill: var(--color-dark-100);
+
+      &:hover {
+        fill: var(--color-light-900);
+      }
+    }
+
+    .searchButton {
+      cursor: default;
+
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translate(0, -50%);
+
+      fill: var(--color-dark-100);
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+
+      fill: var(--color-dark-100);
+
+      &:hover {
+        fill: var(--color-light-900);
+      }
+    }
+  }
+
+  .errorText {
+    color: var(--color-danger-300);
+  }
+
+  .label {
+    color: var(--color-dark-100);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  color: var(--color-dark-100);
+  opacity: 0.4;
+
+  &::placeholder {
+    color: inherit;
+  }
+}

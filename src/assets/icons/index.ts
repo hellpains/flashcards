@@ -1,1 +1,5 @@
+export { default as Close } from './close'
+export { default as Eye } from './eye'
+export { default as EyeOff } from './eye-off'
 export { default as Logout } from './log-out'
+export { default as Search } from './search'
