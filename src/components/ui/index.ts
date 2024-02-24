@@ -1,2 +1,5 @@
 export * from './button'
 export * from './typography'
+export * from './input'
+export * from './card'
+export * from './tabs'
