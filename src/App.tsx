@@ -1,20 +1,13 @@
 import { useState } from 'react'
 
+import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 
 export function App() {
   const [value, setValue] = useState('')
 
   return (
-    <div
-      style={{
-        backgroundColor: '#171717',
-        height: '600px',
-        margin: '300px',
-        padding: '50px',
-        width: '600px',
-      }}
-    >
+    <Card style={{ margin: '100px', padding: '30px', width: '600px' }}>
       <Input
         disabled
         label={'Input1'}
@@ -34,6 +27,6 @@ export function App() {
         value={value}
       />
       <Input label={'Input3'} onValueChange={setValue} value={value} />
-    </div>
+    </Card>
   )
 }
