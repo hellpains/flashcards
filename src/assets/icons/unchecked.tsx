@@ -2,15 +2,15 @@ import { Ref, SVGProps, forwardRef, memo } from 'react'
 const SvgComponent = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
-    height={18}
+    height={16}
     ref={ref}
-    width={18}
+    width={16}
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
     <path
-      d={'M16 2v14H2V2h14Zm0-2H2a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z'}
-      fill={'#fff'}
+      d={'M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm0 14.4A6.4 6.4 0 1 1 8 1.6a6.4 6.4 0 0 1 0 12.8Z'}
+      fill={'#8C61FF'}
     />
   </svg>
 )

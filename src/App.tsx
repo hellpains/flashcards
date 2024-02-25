@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { Checkbox } from './components/ui'
+import { RadioGroup } from './components/ui'
 
 export function App() {
-  const [checked, setChecked] = useState(false)
+  const [value, setValue] = useState('radio3')
 
   return (
     <div
@@ -15,11 +15,18 @@ export function App() {
         width: '600px',
       }}
     >
-      <Checkbox
-        checked={checked}
-        label={'Check-box'}
-        onCheckedChange={() => setChecked(prevState => !prevState)}
+      <RadioGroup
+        disabled
+        onValueChange={setValue}
+        options={[
+          { title: 'Radio 1', value: 'radio1' },
+          { title: 'Radio 2', value: 'radio2' },
+          { title: 'Radio 3', value: 'radio3' },
+          { title: 'Radio 4', value: 'radio4' },
+        ]}
+        value={value}
       />
+      {value}
     </div>
   )
 }

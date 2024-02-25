@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
-import { Checked, Unchecked } from '@/assets'
+import { Selected, Unselected } from '@/assets'
 import { Typography } from '@/components/ui'
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
 
@@ -25,7 +25,7 @@ export const Checkbox = forwardRef<ElementRef<typeof RadixCheckbox.Root>, Checkb
         <RadixCheckbox.Root className={s.root} disabled={disabled} ref={ref} {...rest}>
           <RadixCheckbox.Indicator className={s.indicator} forceMount>
             <div className={s.hover}></div>
-            <div className={s.icon}>{rest.checked ? <Checked /> : <Unchecked />}</div>
+            <div className={s.icon}>{rest.checked ? <Selected /> : <Unselected />}</div>
           </RadixCheckbox.Indicator>
         </RadixCheckbox.Root>
 
