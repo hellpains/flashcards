@@ -1,3 +1,4 @@
+export { default as ArrowIosUp } from './arrow-ios-up'
 export { default as Checked } from './checked'
 export { default as Close } from './close'
 export { default as Eye } from './eye'

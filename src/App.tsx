@@ -1,9 +1,21 @@
 import { useState } from 'react'
 
-import { RadioGroup } from './components/ui'
+import { Select, SelectContent, SelectItem, SelectPortal, SelectTrigger } from '@/components/ui'
 
 export function App() {
-  const [value, setValue] = useState('radio3')
+  const [value, setValue] = useState('select2')
+
+  const options = [
+    {
+      title: 'Select 1',
+      value: 'select1',
+    },
+    { title: 'Select 2', value: 'select2' },
+    { title: 'Select 3', value: 'select3' },
+    { title: 'Select 4', value: 'select4' },
+    { title: 'Select 5', value: 'select5' },
+  ]
+  const selectedValue = options.find(o => o.value === value)
 
   return (
     <div
@@ -15,18 +27,35 @@ export function App() {
         width: '600px',
       }}
     >
-      <RadioGroup
-        disabled
-        onValueChange={setValue}
-        options={[
-          { title: 'Radio 1', value: 'radio1' },
-          { title: 'Radio 2', value: 'radio2' },
-          { title: 'Radio 3', value: 'radio3' },
-          { title: 'Radio 4', value: 'radio4' },
-        ]}
-        value={value}
-      />
-      {value}
+      <Select onValueChange={setValue} value={value}>
+        <SelectTrigger
+          style={{ boxSizing: 'border-box', height: '36', minWidth: '210px', padding: '5px 10px' }}
+        >
+          {selectedValue?.title}
+        </SelectTrigger>
+        <SelectPortal>
+          <SelectContent
+            position={'popper'}
+            side={'bottom'}
+            style={{ boxSizing: 'border-box', minWidth: '210px' }}
+          >
+            {options.map(o => {
+              return (
+                <SelectItem
+                  key={o.value}
+                  style={{
+                    height: '36',
+                    padding: '5px 10px',
+                  }}
+                  value={o.value}
+                >
+                  {o.title}
+                </SelectItem>
+              )
+            })}
+          </SelectContent>
+        </SelectPortal>
+      </Select>
     </div>
   )
 }
