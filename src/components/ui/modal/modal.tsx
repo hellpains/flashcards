@@ -15,7 +15,6 @@ export type ModalProps = {
 export const Modal = ({ children, title, ...rest }: ModalProps) => {
   return (
     <RadixDialog.Root {...rest}>
-      <RadixDialog.Trigger className={s.trigger}>trigger</RadixDialog.Trigger>
       <RadixDialog.Portal>
         <RadixDialog.Overlay className={s.overlay} />
         <RadixDialog.Content className={s.content}>
@@ -29,7 +28,7 @@ export const Modal = ({ children, title, ...rest }: ModalProps) => {
               </Button>
             </RadixDialog.Close>
           </div>
-          {children}
+          <div className={s.contentBox}>{children}</div>
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>

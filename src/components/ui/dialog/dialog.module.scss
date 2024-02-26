@@ -1,0 +1,17 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0 18px;
+
+  .cancelButton {
+    display: flex;
+    justify-content: start;
+  }
+
+  .confirmButton {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+}
