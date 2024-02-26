@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Meta, type StoryObj } from '@storybook/react'
 
-import { Select, SelectContent, SelectItem, SelectPortal, SelectTrigger } from './select'
+import { Select, SelectContent, SelectItem, SelectTrigger } from './select'
 
 const meta = {
   argTypes: {},
@@ -35,28 +35,26 @@ export const Default: Story = {
         >
           {selectedValue?.title}
         </SelectTrigger>
-        <SelectPortal>
-          <SelectContent
-            position={'popper'}
-            side={'bottom'}
-            style={{ boxSizing: 'border-box', width: '210px' }}
-          >
-            {options.map(o => {
-              return (
-                <SelectItem
-                  key={o.value}
-                  style={{
-                    height: '36',
-                    padding: '5px 10px',
-                  }}
-                  value={o.value}
-                >
-                  {o.title}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </SelectPortal>
+        <SelectContent
+          position={'popper'}
+          side={'bottom'}
+          style={{ boxSizing: 'border-box', width: '210px' }}
+        >
+          {options.map(o => {
+            return (
+              <SelectItem
+                key={o.value}
+                style={{
+                  height: '36',
+                  padding: '5px 10px',
+                }}
+                value={o.value}
+              >
+                {o.title}
+              </SelectItem>
+            )
+          })}
+        </SelectContent>
       </Select>
     )
   },
@@ -82,28 +80,26 @@ export const Disabled: Story = {
         >
           {selectedValue?.title}
         </SelectTrigger>
-        <SelectPortal>
-          <SelectContent
-            position={'popper'}
-            side={'bottom'}
-            style={{ boxSizing: 'border-box', width: '210px' }}
-          >
-            {options.map(o => {
-              return (
-                <SelectItem
-                  key={o.value}
-                  style={{
-                    height: '36',
-                    padding: '5px 10px',
-                  }}
-                  value={o.value}
-                >
-                  {o.title}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </SelectPortal>
+        <SelectContent
+          position={'popper'}
+          side={'bottom'}
+          style={{ boxSizing: 'border-box', width: '210px' }}
+        >
+          {options.map(o => {
+            return (
+              <SelectItem
+                key={o.value}
+                style={{
+                  height: '36',
+                  padding: '5px 10px',
+                }}
+                value={o.value}
+              >
+                {o.title}
+              </SelectItem>
+            )
+          })}
+        </SelectContent>
       </Select>
     )
   },
