@@ -1,8 +1,6 @@
 import { Logout, Person, PlayCircle } from '@/assets'
 import {
   Avatar,
-  AvatarFallback,
-  AvatarImage,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -61,10 +59,7 @@ export const HeaderDropdownMenu: Story = {
         <DropdownMenu {...args}>
           <DropdownMenuTrigger asChild>
             <Button variant={'icon'}>
-              <Avatar>
-                <AvatarImage />
-                <AvatarFallback>H</AvatarFallback>
-              </Avatar>
+              <Avatar nickname={'hellpains'} />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>

@@ -1,0 +1,97 @@
+.header {
+  background-color: var(--color-dark-700);
+  border-bottom: 1px solid var(--color-dark-500);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: content-box;
+    max-width: 1010px;
+    height: 60px;
+    margin: 0 auto;
+    padding-inline: 12px;
+
+    .logo {
+      all: unset;
+
+      cursor: pointer;
+
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.userWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  .avatar {
+    cursor: pointer;
+    position: relative;
+    z-index: 12;
+  }
+
+  .blur {
+    position: absolute;
+    z-index: 1;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 100%;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 10px 2px rgb(204 187 250 / 10000%);
+    }
+  }
+
+  .nickname {
+    all: unset;
+
+    cursor: pointer;
+
+    text-decoration: underline dashed;
+    text-underline-offset: 7px;
+
+    transition: 0.2s;
+
+    &:hover {
+      color: var(--color-primary-100);
+    }
+  }
+}
+
+.user {
+  display: flex;
+  gap: 5px;
+  padding: 12px 30px 12px 12px;
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .nickname {
+      line-height: var(--line-height-s);
+    }
+
+    .email {
+      color: var(--color-dark-100);
+    }
+  }
+}
+
+@media (max-width <= 1000px) {
+  .container {
+    width: 80%;
+  }
+}
