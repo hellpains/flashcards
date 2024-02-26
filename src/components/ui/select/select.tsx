@@ -6,10 +6,10 @@ import * as RadixSelect from '@radix-ui/react-select'
 import s from './select.module.scss'
 
 type SelectProps = ComponentPropsWithoutRef<typeof RadixSelect.Root>
-const Select = forwardRef<ElementRef<typeof RadixSelect.Root>, SelectProps>(props => {
+const Select = forwardRef<ElementRef<typeof RadixSelect.Root>, SelectProps>((props, ref) => {
   const { ...rest } = props
 
-  return <RadixSelect.Root {...rest}></RadixSelect.Root>
+  return <RadixSelect.Root {...rest} />
 })
 
 Select.displayName = 'Select'
@@ -34,7 +34,7 @@ const SelectTrigger = forwardRef<ElementRef<typeof RadixSelect.Trigger>, SelectT
 SelectTrigger.displayName = 'SelectTrigger'
 
 const SelectPortal = forwardRef<ElementRef<typeof RadixSelect.Portal>, SelectContentProps>(
-  ({ className, ...rest }) => {
+  ({ className, ...rest }, ref) => {
     return <RadixSelect.Portal {...rest} />
   }
 )

@@ -61,4 +61,8 @@
   padding: 0;
   background: none;
   border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
 }
