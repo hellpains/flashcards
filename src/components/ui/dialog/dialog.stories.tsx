@@ -24,7 +24,6 @@ export const Default: Story = {
 
     return (
       <>
-        {' '}
         <Button onClick={() => setOpen(prevState => !prevState)}>open dialog</Button>
         <Dialog onOpenChange={setOpen} open={open} {...args}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolor dolorem
