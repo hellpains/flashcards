@@ -11,7 +11,7 @@ export const Slider = forwardRef<
     value?: (number | undefined)[]
   }
 >((props, ref) => {
-  const { className, max, onValueChange, value, ...rest } = props
+  const { className, disabled, max, onValueChange, value, ...rest } = props
 
   useEffect(() => {
     if (value?.[1] === undefined || value?.[1] === null) {
@@ -20,7 +20,7 @@ export const Slider = forwardRef<
   })
 
   return (
-    <div className={s.slider}>
+    <div className={clsx(s.slider, disabled && s.disabled)}>
       <div className={s.value}>{value?.[0]}</div>
       <RadixSlider.Root
         className={clsx(s.root, className)}

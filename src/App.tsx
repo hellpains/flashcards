@@ -19,7 +19,7 @@ export function App() {
           width: '600px',
         }}
       >
-        <Slider onValueChange={setValue} value={value} />
+        <Slider disabled onValueChange={setValue} value={value} />
       </div>
     </div>
   )

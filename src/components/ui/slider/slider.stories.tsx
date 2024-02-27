@@ -21,3 +21,12 @@ export const Default: Story = {
     return <Slider onValueChange={setValue} value={value} {...args} />
   },
 }
+
+export const Disabled: Story = {
+  args: {},
+  render: args => {
+    const [value, setValue] = useState([30, 80])
+
+    return <Slider onValueChange={setValue} value={value} {...args} disabled />
+  },
+}

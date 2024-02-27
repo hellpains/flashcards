@@ -72,3 +72,8 @@
   background-color: var(--color-primary-500);
   border-radius: 9999px;
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
