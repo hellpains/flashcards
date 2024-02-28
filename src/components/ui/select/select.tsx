@@ -23,7 +23,11 @@ export const Select = forwardRef<ElementRef<typeof RadixSelect.Trigger>, SelectP
           <RadixSelect.Content className={clsx(s.content)} position={'popper'} side={'bottom'}>
             {options.map(o => {
               return (
-                <RadixSelect.Item className={s.item} key={o.value} value={String(o.value)}>
+                <RadixSelect.Item
+                  className={clsx(s.item, value == o.value ? s.activeItem : '')}
+                  key={o.value}
+                  value={String(o.value)}
+                >
                   {o.title}
                 </RadixSelect.Item>
               )

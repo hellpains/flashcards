@@ -58,6 +58,9 @@
     &:hover {
       background-color: var(--color-primary-900);
     }
+    &.activeItem {
+      background-color: var(--color-primary-900);
+    }
   }
 
   &:active {
