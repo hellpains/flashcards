@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: space-between;
 
+  width: 30px;
+  padding: 0 6px;
+
   border: 1px solid var(--color-dark-500);
   border-radius: 2px;
 
@@ -19,26 +22,17 @@
   }
 
   &[data-state='open'] {
-    .arrowIcon {
-      transform: rotate(0);
-    }
-  }
+    transform: rotate(0);
 
-  &:hover {
-    cursor: pointer;
-    background-color: var(--color-dark-100);
-  }
-
-  &[data-state='open'] {
     border-color: var(--color-dark-100);
     border-bottom-width: 0.5px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  &:focus {
-    outline: 1px solid var(--color-info-700);
-    outline-offset: -1px;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-dark-100);
   }
 
   &[data-disabled] {
@@ -48,8 +42,9 @@
 }
 
 .content {
-  width: inherit;
+  width: 44px;
 
+  background-clip: content-box;
   border: 1px solid var(--color-dark-100);
   border-top: none;
   border-bottom-right-radius: 2px;
@@ -58,6 +53,7 @@
   .item {
     all: unset;
     cursor: pointer;
+    padding: 0 6px;
 
     &:hover {
       background-color: var(--color-primary-900);
