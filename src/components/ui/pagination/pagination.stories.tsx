@@ -16,31 +16,26 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    limit: 20,
-    limits: [{ title: '10', value: 10 }],
-    page: 20,
-    setLimit: () => {},
-    setPage: () => {},
+    currentPage: 12,
+    onPageChange: () => {},
+    pageSize: 12,
+    setPageSize: () => {},
     totalPage: 100,
   },
   render: args => {
-    const [limit, setLimit] = useState(20)
-    const [page, setPage] = useState(6)
+    const [currentPage, setCurrentPage] = useState(1)
+
+    const [pageSize, setPageSize] = useState(5)
 
     return (
       <>
         <Pagination
           {...args}
-          limit={limit}
-          limits={[
-            { title: '10', value: 10 },
-            { title: '20', value: 20 },
-            { title: '30', value: 30 },
-          ]}
-          page={page}
-          setLimit={setLimit}
-          setPage={setPage}
-          totalPage={100}
+          currentPage={currentPage}
+          onPageChange={page => setCurrentPage(page)}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
+          totalPage={Math.ceil(1000 / pageSize)}
         />
       </>
     )

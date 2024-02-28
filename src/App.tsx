@@ -7,7 +7,9 @@ import { Pagination } from './components/ui'
 
 export function App() {
   const [currentPage, setCurrentPage] = useState(1)
-  const [data, setData] = useState<{ id: number }[]>([])
+  const [data, setData] = useState<{ comment: string; email: string; id: number; name: string }[]>(
+    []
+  )
   const [pageSize, setPageSize] = useState(5)
 
   const currentTableData = useMemo(() => {
@@ -18,7 +20,7 @@ export function App() {
   }, [currentPage])
 
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts`).then(res => {
+    axios.get(`https://jsonplaceholder.typicode.com/comments`).then(res => {
       setData(res.data)
     })
   }, [])
@@ -38,10 +40,9 @@ export function App() {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>FIRST NAME</th>
-                <th>LAST NAME</th>
+                <th>NAME</th>
                 <th>EMAIL</th>
-                <th>PHONE</th>
+                <th>COMMENT</th>
               </tr>
             </thead>
             <tbody>
@@ -49,6 +50,9 @@ export function App() {
                 return (
                   <tr key={item.id}>
                     <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.email}</td>
+                    <td>{item.comment}</td>
                   </tr>
                 )
               })}
