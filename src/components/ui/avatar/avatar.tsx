@@ -7,11 +7,12 @@ import s from './avatar.module.scss'
 
 type AvatarProps = {
   className?: string
+  image?: string
   nickname?: string
   size?: CSSProperties['width']
 } & ComponentPropsWithoutRef<typeof RadixAvatar.Root>
 export const Avatar = forwardRef<ElementRef<typeof RadixAvatar.Root>, AvatarProps>((props, ref) => {
-  const { className, nickname, size = '36px', style, ...rest } = props
+  const { className, image, nickname, size = '36px', style, ...rest } = props
 
   return (
     <RadixAvatar.Root
@@ -20,7 +21,7 @@ export const Avatar = forwardRef<ElementRef<typeof RadixAvatar.Root>, AvatarProp
       style={{ ...style, height: size, width: size }}
       {...rest}
     >
-      <RadixAvatar.Image src={clsx(s.image)} />
+      <RadixAvatar.Image className={s.image} src={image} />
       <RadixAvatar.Fallback className={s.fallback}>
         {nickname?.[0].toUpperCase()}
       </RadixAvatar.Fallback>

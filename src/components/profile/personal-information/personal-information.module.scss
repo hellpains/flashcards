@@ -1,0 +1,42 @@
+.container {
+  width: 420px;
+  padding: 33px 36px 0;
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    margin: 27px 0 10px;
+  }
+
+  .nickname {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .email {
+    display: flex;
+    justify-content: center;
+    color: var(--color-dark-100);
+  }
+
+  .logout {
+    display: flex;
+    margin: 13px auto 41px;
+    fill: var(--color-light-100);
+  }
+
+  .editableNickname {
+    margin: 12px 0 84px;
+
+    .input {
+      margin-bottom: 36px;
+    }
+  }
+}
