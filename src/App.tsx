@@ -1,6 +1,6 @@
 import { Header } from '@/layout/header'
 
-import { SignIn } from './components/auth'
+import { SignUpForm } from './components/auth'
 
 export function App() {
   return (
@@ -10,11 +10,14 @@ export function App() {
         style={{
           height: '600px',
           margin: '10px auto',
-          // padding: '200px',
           width: '500px',
         }}
       >
-        <SignIn onSubmit={(data: any) => console.log(data)} />
+        <SignUpForm
+          onSubmit={(data: { email: string; password: string }) =>
+            console.log({ email: data.email, password: data.password })
+          }
+        />
       </div>
     </div>
   )

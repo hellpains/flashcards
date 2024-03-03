@@ -20,7 +20,7 @@ type Props = {
   onSubmit: (date: FormValues) => void
 }
 
-export const SignIn = (props: Props) => {
+export const SignInForm = (props: Props) => {
   const { control, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       email: '',
