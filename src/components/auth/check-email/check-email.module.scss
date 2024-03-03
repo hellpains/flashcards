@@ -1,0 +1,22 @@
+.container {
+  width: 420px;
+  padding: 37px 36px 44px;
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .svg {
+    display: flex;
+    justify-content: center;
+    margin: 27px 0 19px;
+  }
+
+  .text {
+    display: flex;
+    margin-bottom: 65px;
+    color: var(--color-dark-100);
+    text-align: center;
+  }
+}

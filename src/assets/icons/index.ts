@@ -1,4 +1,5 @@
 export { default as ArrowIosUp } from './arrow-ios-up'
+export { default as CheckEmailSvg } from './check-email'
 export { default as Checked } from './checked'
 export { default as Close } from './close'
 export { default as Edit } from './edit'
