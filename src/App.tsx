@@ -1,4 +1,4 @@
-import { CheckEmail } from '@/components'
+import { CreateNewPasswordForm } from '@/components'
 import { Header } from '@/layout/header'
 
 export function App() {
@@ -12,7 +12,7 @@ export function App() {
           width: '500px',
         }}
       >
-        <CheckEmail />
+        <CreateNewPasswordForm onSubmit={() => {}} />
       </div>
     </div>
   )
