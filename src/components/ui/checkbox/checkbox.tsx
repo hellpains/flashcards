@@ -7,25 +7,43 @@ import * as RadixCheckbox from '@radix-ui/react-checkbox'
 import s from './checkbox.module.scss'
 
 export type CheckboxProps = {
+  checked?: boolean
+  className?: string
   label?: string
+  onCheckedChange?: (checked: boolean) => void
   position?: 'left' | 'right'
-} & ComponentPropsWithoutRef<typeof RadixCheckbox.Root>
+} & Omit<ComponentPropsWithoutRef<typeof RadixCheckbox.Root>, 'checked' | 'onCheckedChange'>
 
 export const Checkbox = forwardRef<ElementRef<typeof RadixCheckbox.Root>, CheckboxProps>(
   (props, ref) => {
-    const { disabled, label, position = 'right', ...rest } = props
+    const {
+      checked,
+      className,
+      disabled,
+      label,
+      onCheckedChange,
+      position = 'right',
+      ...rest
+    } = props
 
     return (
       <Typography
         as={'label'}
-        className={`${s.container} ${disabled ? s.disabled : ''}`}
+        className={`${s.container} ${disabled ? s.disabled : ''} ${className}`}
         variant={'body2'}
       >
         {position === 'left' && label}
-        <RadixCheckbox.Root className={s.root} disabled={disabled} ref={ref} {...rest}>
+        <RadixCheckbox.Root
+          checked={checked}
+          className={s.root}
+          disabled={disabled}
+          onCheckedChange={onCheckedChange}
+          ref={ref}
+          {...rest}
+        >
           <RadixCheckbox.Indicator className={s.indicator} forceMount>
             <div className={s.hover}></div>
-            <div className={s.icon}>{rest.checked ? <Selected /> : <Unselected />}</div>
+            <div className={s.icon}>{checked ? <Selected /> : <Unselected />}</div>
           </RadixCheckbox.Indicator>
         </RadixCheckbox.Root>
 

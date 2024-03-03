@@ -1,0 +1,46 @@
+.container {
+  width: 420px;
+  padding: 33px 36px 29px;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 27px 0 18px;
+  }
+
+  .checkbox {
+    display: flex;
+  }
+
+  .linkToForgot {
+    float: right;
+    margin: 15px 0 66px;
+    color: var(--color-light-100);
+    text-decoration: none;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 11px;
+    color: var(--color-light-900);
+  }
+
+  .linkToSignUp {
+    display: flex;
+
+    width: max-content;
+    margin: 0 auto;
+
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-500);
+  }
+}

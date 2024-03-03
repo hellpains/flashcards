@@ -9,7 +9,10 @@ export type ButtonProps<T extends ElementType = 'button'> = {
 
 import s from './button.module.scss'
 
-export const ButtonPolymorph = <T extends ElementType = 'button'>(props: ButtonProps<T>, ref) => {
+export const ButtonPolymorph = <T extends ElementType = 'button'>(
+  props: ButtonProps<T>,
+  ref: any
+) => {
   const { as: Component = 'button', className, fullWidth, variant = 'primary', ...rest } = props
 
   return (
